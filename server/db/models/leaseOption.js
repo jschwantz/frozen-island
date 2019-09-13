@@ -21,7 +21,8 @@ const LeaseOption = db.define('leaseOption', {
     type: Sequelize.FLOAT
   },
   prepaidFlag: {
-    type: Sequelize.BOOLEAN
+    type: Sequelize.BOOLEAN,
+    defaultValue: true
   },
   incentives: {
     type: Sequelize.FLOAT,

@@ -13,7 +13,7 @@ router.get('/', async (req, res, next) => {
           }
         ],
         where: {
-          userId: req.user
+          userId: req.user.id
         }
       })
       res.json(leases)
