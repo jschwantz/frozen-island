@@ -25,31 +25,29 @@ router.get('/', async (req, res, next) => {
   }
 })
 
-// router.get('/:leaseId', async (req, res, next) => {
-//   try {
-//     if (req.user) {
-//       const leases = await Lease.findOne({
-//         include: [
-//           {
-//             model: LeaseVersion,
-//             include: [
-//               LeaseOption
-//             ]
-//           }
-//         ],
-//         where: {
-//           userId: req.user,
-//           id: req.params.leaseId
-//         }
-//       })
-//       res.json(leases)
-//     } else {
-//       res.status(404).json()
-//     }
-//   } catch (err) {
-//     next(err)
-//   }
-// })
+router.get('/:leaseId', async (req, res, next) => {
+  try {
+    if (req.user) {
+      const leases = await Lease.findOne({
+        include: [
+          {
+            model: LeaseVersion,
+            include: [LeaseOption]
+          }
+        ],
+        where: {
+          userId: req.user.id,
+          id: req.params.leaseId
+        }
+      })
+      res.json(leases)
+    } else {
+      res.status(404).json()
+    }
+  } catch (err) {
+    next(err)
+  }
+})
 
 // router.post('/', async (req, res, next) => {
 //   try {
