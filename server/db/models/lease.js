@@ -6,6 +6,11 @@ const Lease = db.define('lease', {
     type: Sequelize.STRING,
     unique: true,
     allowNull: false
+  },
+  status: {
+    type: Sequelize.ENUM('Initiated', 'Approved', 'Terminated'),
+    allowNull: false,
+    defaultValue: 'Initiated'
   }
 })
 

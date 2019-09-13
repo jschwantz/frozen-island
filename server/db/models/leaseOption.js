@@ -7,7 +7,7 @@ const LeaseOption = db.define('leaseOption', {
     allowNull: false
   },
   notes: {
-    type: Sequelize.STRING,
+    type: Sequelize.TEXT,
     allowNull: false
   },
   // 1 = short-term
@@ -24,25 +24,32 @@ const LeaseOption = db.define('leaseOption', {
     type: Sequelize.BOOLEAN
   },
   incentives: {
-    type: Sequelize.FLOAT
+    type: Sequelize.FLOAT,
+    defaultValue: 0
   },
   initialDirectCosts: {
-    type: Sequelize.FLOAT
+    type: Sequelize.FLOAT,
+    defaultValue: 0
   },
   purchaseOptionLikely: {
-    type: Sequelize.BOOLEAN
+    type: Sequelize.BOOLEAN,
+    defaultValue: false
   },
   purchaseAmount: {
-    type: Sequelize.FLOAT
+    type: Sequelize.FLOAT,
+    defaultValue: 0
   },
   terminationAmount: {
-    type: Sequelize.FLOAT
+    type: Sequelize.FLOAT,
+    defaultValue: 0
   },
   residualGuarAmount: {
-    type: Sequelize.FLOAT
+    type: Sequelize.FLOAT,
+    defaultValue: 0
   },
   residualPayAmount: {
-    type: Sequelize.FLOAT
+    type: Sequelize.FLOAT,
+    defaultValue: 0
   }
 })
 

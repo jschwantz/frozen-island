@@ -5,6 +5,12 @@ const LeaseVersion = db.define('leaseVersion', {
   version: {
     type: Sequelize.INTEGER,
     allowNull: false
+  },
+  approvalStatus: {
+    type: Sequelize.STRING
+  },
+  approvalDate: {
+    type: Sequelize.DATE
   }
 })
 

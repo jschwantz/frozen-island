@@ -24,5 +24,8 @@ LeaseVersion.hasOne(LeaseOption)
  * instead of: const User = require('../db/models/user')
  */
 module.exports = {
-  User
+  User,
+  Lease,
+  LeaseVersion,
+  LeaseOption
 }
